@@ -1,4 +1,4 @@
-package com;
+package com.test;
 import com.collection.Person;
 
 import java.math.BigDecimal;
@@ -14,12 +14,8 @@ import java.util.stream.Collectors;
 public class Test {
     public static void main(String[] args) {
 
-        String s = null;
-        System.out.println(s.split(","));
-
-
-        BigDecimal a = BigDecimal.valueOf(1);
-        System.out.println(a.divide(BigDecimal.valueOf(100)));
+        //BigDecimal a = BigDecimal.valueOf(1);
+        //System.out.println(a.divide(BigDecimal.valueOf(100)));
 
         // int i = 123223232;
         // System.out.println(new Long(i));
