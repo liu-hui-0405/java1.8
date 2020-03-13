@@ -1,9 +1,6 @@
 package com.sort;
-import	java.util.SortedSet;
-import	java.util.Comparator;
-import	java.util.List;
+import java.util.*;
 
-import java.util.ArrayList;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -18,6 +15,7 @@ public class SortList {
         List<Student> list = new ArrayList<Student>();
         list.add(new Student(1, "Mahesh", 12));
         list.add(new Student(2, "Suresh", 15));
+        list.add(new Student(4, "Nilesh", 10));
         list.add(new Student(3, "Nilesh", 10));
 
         System.out.println("---Natural Sorting by Name---");
@@ -35,5 +33,10 @@ public class SortList {
         System.out.println("---Sorting using Comparator by Age with reverse order---");
         list.stream().sorted(Comparator.comparing(Student :: getAge).reversed()).collect(Collectors.toList())
                 .forEach(e -> System.out.println("Id:"+ e.getId()+", Name: "+e.getName()+", Age:"+e.getAge()));
+
+        System.out.println("---含null值排序---");
+        list.add(null);
+        Collections.sort(list, Comparator.nullsFirst(Comparator.comparing(Student :: getAge).thenComparing(Student::getId)));
+        list.forEach(System.out :: println);
     }
 }
